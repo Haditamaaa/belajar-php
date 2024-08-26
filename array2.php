@@ -14,11 +14,16 @@ $angka = [3, 2, 15, 20, 11, 77, 89, 8];
         .kotak {
             width: 50px;
             height: 50;
-            background-color: salmon;
+            background-color: #bada55;
             text-align: center;
             line-height: 50px;
             margin: 3px;
             float: left;
+            transition: 0.5s;
+        }
+        .kotak:hover {
+            transform: rotate(360deg);
+            border-radius: 50%;
         }
         .clear {clear: both;}
     </style>
