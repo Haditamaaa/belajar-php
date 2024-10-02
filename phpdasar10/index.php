@@ -1,6 +1,11 @@
 <?php
 require 'functions.php';
 $mahasiswa = query("SELECT * FROM mahasiswa");
+
+// tombol cari
+if (isset($_POST["cari"])) {
+    $mahasiswa = cari($_POST["keyword"]);
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +25,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
             cursor: pointer;
             font-size: 16px;
             margin-left: 30%;
+            float: left;
         }
 
         a {
@@ -33,7 +39,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
         }
 
         .header {
-            margin-bottom: 20px;
+            margin-bottom: 40px;
         }
 
         table {
@@ -44,6 +50,10 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
             text-align: center;
             padding-bottom: 20px;
         }
+
+        form input {
+            margin-left: 15%;
+        }
     </style>
 </head>
 
@@ -51,6 +61,11 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
     <div class="header">
         <h1>DAFTAR MAHASISWA</h1>
         <a href="tambah.php">Tambah Data Mahasiswa</a>
+
+        <form action="" method="post">
+            <input type="text" name="keyword" size="20" autofocus placeholder="masukan keyword" autocomplete="off">
+            <button type="submit" name="cari">Cari</button>
+        </form>
     </div>
 
     <table border="1" cellpadding="10" cellspacing="0" align="center">
