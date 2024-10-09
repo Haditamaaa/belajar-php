@@ -4,7 +4,7 @@ session_start();
 require 'functions.php';
 
 // cek cookie
-if (!isset($_COOKIE["login"])) {
+if (!isset($_COOKIE['login']) && isset($_COOKIE['key'])) {
     $id = $_COOKIE['id'];
     $key = $_COOKIE['key'];
 
