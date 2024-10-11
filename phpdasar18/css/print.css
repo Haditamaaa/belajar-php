@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+table {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
